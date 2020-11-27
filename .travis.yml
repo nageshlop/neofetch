@@ -6,7 +6,7 @@ arch:
 
 os:
     - linux
-    - osx
+    - if [ $TRAVIS_CPU_ARCH = amd64 ]; then osx; fi
 
 before_install:
     - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
